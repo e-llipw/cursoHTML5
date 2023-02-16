@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>notificações</title>
+
+        <script>
+            function getNotification(){
+                if(window.Notifications.checkPermission()==0){
+                    showNotification();
+                }
+                else{
+                    window.Notifications.requestPermission();
+                }
+            }
+
+            function showNotification(){
+                var n=window.Notifications.createNotification("", "Novo email", "olá tudo bem...");
+                n.show();
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="getNotification();">sim</button>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>canvas</title>
+        <script>
+            var xObj1=0;
+            var yObj2=100;
+
+            function load(){
+                var cenario=document.getElementById("cenario");
+                var ctx=cenario.getContext("2d");
+
+                //fundo
+                ctx.fillStyle="white";
+                ctx.fillRect(0, 0, 800, 600);
+
+                ctx.fillStyle="blue";
+                ctx.fillRect(xObj1, 0, 50, 50);
+                ctx.fillStyle="red";
+                ctx.fillRect(100, yObj2, 50, 50);
+
+                xObj1++;
+                yObj2++;
+
+                if (xObj1>300){
+                    xObj1=0;
+                }
+
+                if (yObj2>300){
+                    yObj2=0;
+                }
+            }
+
+            setInterval('load();', 10)
+        </script>
+    </head>
+    <body onload="load();">
+        <canvas id="cenario" width="800" height="800">
+
+        </canvas>
+    </body>
+</html>
